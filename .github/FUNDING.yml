@@ -1,0 +1,9 @@
+# GitHub Sponsors and Project Funding Configuration for Lucifer Invoice Studio
+# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/displaying-a-sponsor-button-in-your-repository
+
+github:
+  - luciferopensource
+
+custom:
+  - https://github.com/luciferopensource/InvoiceX-Studio
+  - https://gitlab.com/luciferopensource/invoicex-studio

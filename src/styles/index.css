@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-cinzel: 'Cinzel', serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  
+  /* App UI Theme (Default: Royal Black & Gold) */
+  --bg-primary: #0a0d14;
+  --bg-secondary: #101522;
+  --bg-tertiary: #171f33;
+  --bg-surface: #121826;
+  --border-color: rgba(212, 175, 55, 0.15);
+  --border-hover: rgba(212, 175, 55, 0.35);
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
+  --accent-gold: #d4af37;
+  --accent-gold-hover: #e5c158;
+  --accent-gold-dim: rgba(212, 175, 55, 0.12);
+  --success: #10b981;
+  --danger: #ef4444;
+  --warning: #f59e0b;
+  --info: #3b82f6;
+  --titlebar-height: 40px;
+}
+
+/* Light Theme */
+[data-theme='light'] {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f1f5f9;
+  --bg-surface: #ffffff;
+  --border-color: #e2e8f0;
+  --border-hover: #cbd5e1;
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --text-dim: #94a3b8;
+  --accent-gold: #b45309;
+  --accent-gold-hover: #d97706;
+  --accent-gold-dim: rgba(180, 83, 9, 0.08);
+}
+
+/* Midnight Blue Theme */
+[data-theme='midnight-blue'] {
+  --bg-primary: #030712;
+  --bg-secondary: #0b1329;
+  --bg-tertiary: #132247;
+  --bg-surface: #0e1a38;
+  --border-color: rgba(59, 130, 246, 0.2);
+  --border-hover: rgba(59, 130, 246, 0.4);
+  --text-main: #f8fafc;
+  --text-muted: #93c5fd;
+  --text-dim: #60a5fa;
+  --accent-gold: #38bdf8;
+  --accent-gold-hover: #7dd3fc;
+  --accent-gold-dim: rgba(56, 189, 248, 0.12);
+}
+
+/* Graphite Theme */
+[data-theme='graphite'] {
+  --bg-primary: #121212;
+  --bg-secondary: #1a1a1a;
+  --bg-tertiary: #262626;
+  --bg-surface: #1e1e1e;
+  --border-color: #333333;
+  --border-hover: #4d4d4d;
+  --text-main: #ededed;
+  --text-muted: #a1a1aa;
+  --text-dim: #71717a;
+  --accent-gold: #e4e4e7;
+  --accent-gold-hover: #ffffff;
+  --accent-gold-dim: rgba(255, 255, 255, 0.1);
+}
+
+/* Minimal Theme */
+[data-theme='minimal'] {
+  --bg-primary: #09090b;
+  --bg-secondary: #18181b;
+  --bg-tertiary: #27272a;
+  --bg-surface: #141416;
+  --border-color: #27272a;
+  --border-hover: #3f3f46;
+  --text-main: #fafafa;
+  --text-muted: #a1a1aa;
+  --text-dim: #52525b;
+  --accent-gold: #fafafa;
+  --accent-gold-hover: #ffffff;
+  --accent-gold-dim: rgba(250, 250, 250, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  height: 100vh;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.2);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(212, 175, 55, 0.4);
+}
+
+/* Window Drag Regions for Electron */
+.window-drag-region {
+  -webkit-app-region: drag;
+}
+
+.window-no-drag {
+  -webkit-app-region: no-drag;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Printable Sheet Specifications */
+.invoice-page-sheet {
+  width: 210mm;
+  min-height: 297mm;
+  margin: 0 auto;
+  box-sizing: border-box;
+  background: #ffffff;
+  color: #111827;
+  position: relative;
+  page-break-after: always;
+}
+
+@media screen {
+  .invoice-preview-container {
+    background: #0f131d;
+    padding: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow-y: auto;
+    max-height: calc(100vh - 120px);
+  }
+  .invoice-page-sheet {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.08);
+    transform-origin: top center;
+  }
+}
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+  body, html {
+    background: #ffffff !important;
+    color: #000000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .invoice-preview-container {
+    padding: 0 !important;
+    background: transparent !important;
+    overflow: visible !important;
+    max-height: none !important;
+  }
+  .invoice-page-sheet {
+    box-shadow: none !important;
+    width: 100% !important;
+    min-height: 100% !important;
+    margin: 0 !important;
+    page-break-inside: avoid;
+  }
+}

@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using these metadata."
+title: "Lucifer Invoice Studio"
+abstract: "A professional, offline-first Windows desktop billing and invoice application engineered for wedding businesses and multi-industry commercial enterprises with Indian GST compliance, 15 print-ready templates, and precision decimal calculations."
+authors:
+  - name: "Lucifer Open Source"
+    email: "ailuciferbaba@gmail.com"
+    website: "https://github.com/luciferopensource"
+version: 1.0.0
+date-released: "2026-10-12"
+license: MIT
+repository-code: "https://github.com/luciferopensource/InvoiceX-Studio"
+url: "https://gitlab.com/luciferopensource/invoicex-studio"
+keywords:
+  - "invoice"
+  - "wedding-billing"
+  - "gst-invoice"
+  - "desktop-application"
+  - "electron"
+  - "sqlite"
+  - "react"
+  - "typescript"
+  - "windows"

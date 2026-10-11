@@ -1,0 +1,30 @@
+---
+# GitLab Changelog Configuration for Lucifer Invoice Studio
+# https://docs.gitlab.com/ee/user/project/changelogs.html
+
+date_format: '%Y-%m-%d'
+
+template: |
+  {% if categories %}
+  {% for category in categories %}
+  ### {{ category.title }}
+
+  {% for entry in category.entries %}
+  - {{ entry.title }} ({% if entry.merge_request %}!{{ entry.merge_request.iid }}{% else %}{{ entry.commit.short_id }}{% endif %})
+  {% endfor %}
+
+  {% endfor %}
+  {% else %}
+  No changes recorded.
+  {% endif %}
+
+categories:
+  feature: Features & Enhancements
+  fix: Bug Fixes & Stability
+  perf: Performance & Reliability
+  security: Security & Privacy
+  docs: Documentation & Guides
+  style: Design & Styling
+  refactor: Code Refactoring
+  test: Testing & Quality Assurance
+  chore: Tooling & Maintenance
